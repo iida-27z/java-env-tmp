@@ -1,0 +1,2 @@
+ARG IMAGE_TAG=29-dind
+FROM docker:${IMAGE_TAG}

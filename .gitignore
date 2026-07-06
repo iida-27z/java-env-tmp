@@ -1,0 +1,6 @@
+**/.env
+docker/nginx/certs
+target/
+*.log
+!**/src/main/**/target/
+!**/src/test/**/target/
