@@ -1,0 +1,9 @@
+title = "Custom Gitleaks Configuration"
+
+[extend]
+useDefault = true
+
+[allowlist]
+paths = [
+  '''gradle/wrapper/gradle-wrapper.properties''',
+]
