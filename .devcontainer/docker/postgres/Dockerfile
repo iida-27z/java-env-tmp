@@ -1,0 +1,4 @@
+ARG IMAGE_TAG=18.6
+FROM postgres:${IMAGE_TAG}
+
+ENV TZ=Asia/Tokyo
