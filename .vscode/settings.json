@@ -1,0 +1,102 @@
+{
+  // スペルチェッカーの設定
+  "cSpell.words": [
+    "CEINTL",
+    "dearmor",
+    "ecmel",
+    "esbenp",
+    "gitmessage",
+    "healthcheck",
+    "initdb",
+    "isready",
+    "jacoco", // jacoco
+    "josevseb",
+    "keyrings",
+    "mhutchie",
+    "modulith", //modulith
+    "mtxr",
+    "nodesource",
+    "nodistro",
+    "projectlombok", //lombok
+    "Saarsoo",
+    "springframework", // springframework
+    "springsecurity", // springsecurity
+    "sqltools",
+    "temurin",
+    "thymeleaf", // thymeleaf
+    "vscjava",
+    "webmvc" // webmvc
+  ],
+  "cSpell.ignorePaths": [],
+
+  // gitの設定
+  "git.blame.statusBarItem.enabled": true,
+
+  // HTML/CSSの設定
+  "[html]": {
+    "editor.quickSuggestions": {
+      "other": true
+    }
+  },
+  "css.styleSheets": ["src/main/resources/static/css/**/*.css"],
+
+  // AI Agentの設定
+  "chat.agentFilesLocations": {
+    ".github/agents": true,
+    ".claude/agents": true,
+    "~/.copilot/agents": true,
+    ".agents/agents": true
+  },
+  "chat.instructionsFilesLocations": {
+    ".github/instructions": true,
+    ".claude/rules": true,
+    "~/.copilot/instructions": true,
+    "~/.claude/rules": true,
+    ".agents/instructions": true
+  },
+  "chat.promptFilesLocations": {
+    ".github/prompts": true,
+    ".agents/prompts": true
+  },
+  "chat.agentSkillsLocations": {
+    ".github/skills": true,
+    ".agents/skills": true,
+    ".claude/skills": true,
+    "~/.copilot/skills": true,
+    "~/.agents/skills": true,
+    "~/.claude/skills": true
+  },
+
+  // フォーマットの設定
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.rulers": [100],
+  "[java]": {
+    "editor.defaultFormatter": "josevseb.google-java-format-for-vs-code",
+    "editor.inlayHints.enabled": "onUnlessPressed",
+    "editor.formatOnSave": false
+  },
+  "java.format.settings.google.version": "1.35.0",
+  "[sql]": {
+    "editor.defaultFormatter": "ReneSaarsoo.sql-formatter-vsc",
+    "editor.formatOnSave": false
+  },
+  "SQL-Formatter-VSCode.dialect": "postgresql",
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "[xml]": {
+    "editor.defaultFormatter": "redhat.vscode-xml"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "prettier.proseWrap": "preserve"
+  }
+}
