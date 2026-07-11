@@ -1,0 +1,14 @@
+[versions]
+springBoot = "4.1.1"
+playwright = "1.62.0"
+spotless = "8.10.1"
+googleJavaFormat = "1.36.1"
+
+[plugins]
+spring-boot = { id = "org.springframework.boot", version.ref = "springBoot" }
+spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
+
+[libraries]
+spring-boot-bom = { group = "org.springframework.boot", name = "spring-boot-dependencies", version.ref = "springBoot" }
+playwright = { group = "com.microsoft.playwright", name = "playwright", version.ref = "playwright" }
+google-java-format = { group = "com.google.googlejavaformat", name = "google-java-format", version.ref = "googleJavaFormat" }

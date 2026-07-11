@@ -1,6 +1,11 @@
+## 環境変数ファイル
 **/.env
-docker/nginx/certs
-target/
-*.log
-!**/src/main/**/target/
-!**/src/test/**/target/
+
+## ログファイル
+**/*.log
+
+# ビルド成果物
+build/
+
+# Gradle キャッシュ
+.gradle

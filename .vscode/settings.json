@@ -2,32 +2,47 @@
   // スペルチェッカーの設定
   "cSpell.words": [
     "CEINTL",
+    "codegen",
+    "dbname",
     "dearmor",
+    "Dmigration",
     "ecmel",
+    "EOSQL",
     "esbenp",
+    "flywaydb",
     "gitmessage",
+    "gradlew",
     "healthcheck",
+    "iidadevworks",
     "initdb",
     "isready",
-    "jacoco", // jacoco
+    "jacoco",
     "josevseb",
     "keyrings",
     "mhutchie",
-    "modulith", //modulith
+    "modulith",
     "mtxr",
     "nodesource",
     "nodistro",
-    "projectlombok", //lombok
+    "projectlombok",
+    "psql",
     "Saarsoo",
-    "springframework", // springframework
-    "springsecurity", // springsecurity
+    "springframework",
+    "springsecurity",
     "sqltools",
     "temurin",
-    "thymeleaf", // thymeleaf
+    "thymeleaf",
     "vscjava",
-    "webmvc" // webmvc
+    "webmvc"
   ],
-  "cSpell.ignorePaths": [],
+  "cSpell.ignorePaths": [
+    ".gradle/**",
+    ".vscode/thymeleaf.code-snippets",
+    "build/**",
+    "gradle/**",
+    "gradlew",
+    "gradlew.bat"
+  ],
 
   // gitの設定
   "git.blame.statusBarItem.enabled": true,
@@ -82,7 +97,7 @@
     "editor.inlayHints.enabled": "onUnlessPressed",
     "editor.formatOnSave": false
   },
-  "java.format.settings.google.version": "1.35.0",
+  "java.format.settings.google.version": "1.36.1",
   "[sql]": {
     "editor.defaultFormatter": "ReneSaarsoo.sql-formatter-vsc",
     "editor.formatOnSave": false

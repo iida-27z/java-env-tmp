@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: app
+  flyway:
+    enabled: true
+    url: ${MIGRATION_URL}
+    user: ${MIGRATION_USER}
+    password: ${MIGRATION_PASSWORD}
+    schemas: migration
+    placeholders:
+      app-schema: ${APP_SCHEMA}
