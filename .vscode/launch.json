@@ -1,0 +1,11 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "AppApplication",
+      "request": "launch",
+      "mainClass": "com.iidadevworks.app.AppApplication",
+      "projectName": "app"
+    }
+  ]
+}

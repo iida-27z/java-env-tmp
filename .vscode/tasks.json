@@ -1,0 +1,65 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Spotless: Check",
+      "type": "shell",
+      "command": "./gradlew spotlessJavaCheck",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "Spotless: Apply",
+      "type": "shell",
+      "command": "./gradlew spotlessJavaApply",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "Prettier: Check",
+      "type": "shell",
+      "command": "npx prettier --check .",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "Prettier: Write",
+      "type": "shell",
+      "command": "npx prettier --write .",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "SpotBugs: Check (Main)",
+      "type": "shell",
+      "command": "./gradlew spotbugsMain",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "Playwright: codegen",
+      "type": "shell",
+      "command": "./gradlew playwright --args='codegen localhost:8080'",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      }
+    }
+  ]
+}
