@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: app
+  threads:
+    virtual:
+      enabled: true
+  lifecycle:
+    timeout-per-shutdown-phase: 30s
+  flyway:
+    enabled: false
+server:
+  shutdown: graceful
+  forward-headers-strategy: framework
+  servlet:
+    session:
+      cookie:
+        http-only: true
+        same-site: lax
+        secure: true
+      timeout: 120m
+management:
+  server:
+    port: 8081
+  endpoints:
+    access:
+      default: read-only
+    web:
+      exposure:
+        include: health, info, prometheus
+  endpoint:
+    health:
+      show-details: never
