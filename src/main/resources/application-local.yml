@@ -1,0 +1,42 @@
+spring:
+  thymeleaf:
+    cache: false
+    prefix: file:src/main/resources/templates/
+  web:
+    resources:
+      cache:
+        period: 0
+      chain:
+        cache: false
+      static-locations: file:src/main/resources/static/
+  flyway:
+    enabled: true
+    url: ${MIGRATION_URL}
+    user: ${MIGRATION_USER}
+    password: ${MIGRATION_PASSWORD}
+    schemas: ${APP_SCHEMA}
+    placeholders:
+      app-schema: ${APP_SCHEMA}
+server:
+  servlet:
+    session:
+      cookie:
+        secure: false
+logging:
+  level:
+    org:
+      springframework:
+        jdbc:
+          core:
+            JdbcTemplate: DEBUG
+            StatementCreatorUtils: TRACE
+management:
+  endpoints:
+    access:
+      default: unrestricted
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always

@@ -1,0 +1,20 @@
+[versions]
+springBoot = "4.1.1"
+archUnit = "1.5.0"
+playwright = "1.62.0"
+spotless = "8.10.1"
+googleJavaFormat = "1.36.1"
+spotbugs = "6.5.11"
+findsecbugs = "1.14.0"
+
+[plugins]
+spring-boot = { id = "org.springframework.boot", version.ref = "springBoot" }
+spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
+spotbugs = { id = "com.github.spotbugs", version.ref = "spotbugs" }
+
+[libraries]
+spring-boot-bom = { group = "org.springframework.boot", name = "spring-boot-dependencies", version.ref = "springBoot" }
+archUnit = { group = "com.tngtech.archunit", name = "archunit-junit6", version.ref = "archUnit" }
+playwright = { group = "com.microsoft.playwright", name = "playwright", version.ref = "playwright" }
+google-java-format = { group = "com.google.googlejavaformat", name = "google-java-format", version.ref = "googleJavaFormat" }
+findsecbugs = { group = "com.h3xstream.findsecbugs", name = "findsecbugs-plugin", version.ref = "findsecbugs" }

@@ -46,7 +46,7 @@ services:
       APP_USER: ${APP_USER}
       APP_PASSWORD: ${APP_PASSWORD}
     volumes:
-      - ./docker/postgres/init:/docker-entrypoint-initdb.d
+      - ../src/main/resources/db/init:/docker-entrypoint-initdb.d
     networks:
       default:
         aliases:
