@@ -1,0 +1,51 @@
+name: TEST
+
+on:
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: Run Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v7
+
+      - name: Set up JDK 25
+        uses: actions/setup-java@v6
+        with:
+          java-version: '25'
+          distribution: 'temurin'
+          cache: 'gradle'
+
+      - name: Check Code Formatting
+        run: ./gradlew spotlessCheck
+
+      - name: Run Unit Tests
+        run: ./gradlew test -Pquick
+
+      - name: Cache Playwright Browsers
+        uses: actions/cache@v6
+        with:
+          path: ~/.cache/ms-playwright
+          key: ${{ runner.os }}-playwright-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-playwright-
+
+      - name: Install Playwright Browsers
+        run: ./gradlew playwright --args="install"
+
+      - name: Run Integration Tests
+        run: ./gradlew test -PskipUnitTest
+
+      - name: Archive Test Reports
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: test-reports
+          path: build/reports/jacoco
+          retention-days: 7
