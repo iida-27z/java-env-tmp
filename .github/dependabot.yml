@@ -1,0 +1,49 @@
+version: 2
+updates:
+  - package-ecosystem: gradle
+    directory: /
+    schedule:
+      interval: weekly
+      day: friday
+      time: '22:00'
+      timezone: Asia/Tokyo
+    open-pull-requests-limit: 10
+    labels:
+      - dependencies
+      - gradle
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: friday
+      time: '22:15'
+      timezone: Asia/Tokyo
+    open-pull-requests-limit: 5
+    labels:
+      - dependencies
+      - github-actions
+
+  - package-ecosystem: docker
+    directory: /.devcontainer/docker/java
+    schedule:
+      interval: weekly
+      day: friday
+      time: '22:30'
+      timezone: Asia/Tokyo
+    open-pull-requests-limit: 5
+    labels:
+      - dependencies
+      - docker
+
+  - package-ecosystem: docker
+    directory: /.devcontainer/docker/postgres
+    schedule:
+      interval: weekly
+      day: friday
+      time: '22:45'
+      timezone: Asia/Tokyo
+    open-pull-requests-limit: 5
+    labels:
+      - dependencies
+      - docker
