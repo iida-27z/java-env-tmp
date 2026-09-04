@@ -1,0 +1,83 @@
+name: TEST
+
+on:
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Run Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Gitleaks Check
+        uses: gitleaks/gitleaks-action@v3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up JDK 25
+        uses: actions/setup-java@v6
+        with:
+          java-version: '25'
+          distribution: 'temurin'
+          cache: 'gradle'
+
+      - name: Check Code Formatting
+        run: ./gradlew spotlessCheck
+
+      - name: Run Static Analysis
+        run: ./gradlew spotbugsMain
+
+      - name: Run Unit Tests
+        run: ./gradlew test -Pquick
+
+      - name: Cache Playwright Browsers
+        id: cache-playwright
+        uses: actions/cache@v6
+        with:
+          path: ~/.cache/ms-playwright
+          key: ${{ runner.os }}-playwright-${{ hashFiles('gradle/libs.versions.toml') }}
+          restore-keys: |
+            ${{ runner.os }}-playwright-
+
+      - name: Install Playwright Browsers
+        if: steps.cache-playwright.outputs.cache-hit != 'true'
+        run: ./gradlew playwright --args="install --with-deps"
+
+      - name: Run Integration Tests
+        run: ./gradlew test -PskipUnitTest
+
+      - name: Run Trivy vulnerability scanner
+        uses: aquasecurity/trivy-action@v0.36.0
+        with:
+          scan-type: 'fs'
+          severity: 'CRITICAL,HIGH'
+          format: 'sarif'
+          output: 'trivy-results.sarif'
+          exit-code: '1'
+
+      - name: Archive Test Reports
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: test-reports
+          path: build/reports
+          retention-days: 7
+
+      - name: Archive Security Scan Reports
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: security-scan-reports
+          path: trivy-results.sarif
+          retention-days: 7
