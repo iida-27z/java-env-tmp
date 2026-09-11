@@ -2,7 +2,7 @@
 springBoot = "4.1.1"
 archUnit = "1.5.0"
 playwright = "1.62.0"
-spotless = "8.10.1"
+spotless = "8.10.2"
 googleJavaFormat = "1.36.1"
 spotbugs = "6.5.11"
 findsecbugs = "1.14.0"
