@@ -1,6 +1,6 @@
 [versions]
 springBoot = "4.1.1"
-archUnit = "1.5.0"
+archUnit = "1.5.1"
 playwright = "1.62.0"
 spotless = "8.10.2"
 googleJavaFormat = "1.36.1"
